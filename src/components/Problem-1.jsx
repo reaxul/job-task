@@ -17,16 +17,16 @@ const Problem1 = () => {
     let filteredTasks = [...tasks];
 
     if (status === 'active') {
-      filteredTasks = filteredTasks.filter((task) => task.status === 'Active');
+      filteredTasks = filteredTasks.filter((task) => task.status === 'active');
     } else if (status === 'completed') {
-      filteredTasks = filteredTasks.filter((task) => task.status === 'Completed');
+      filteredTasks = filteredTasks.filter((task) => task.status === 'completed');
     }
 
     filteredTasks.sort((a, b) => {
-      if (a.status === 'Active' && b.status !== 'Active') {
+      if (a.status === 'active' && b.status !== 'active') {
         return -1;
-      } else if (a.status === 'Completed' && b.status !== 'Active') {
-        return 1;
+      } else if (a.status === 'completed' && b.status !== 'active') {
+        return -1;
       }
       return 0;
     });
